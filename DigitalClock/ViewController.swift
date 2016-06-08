@@ -10,8 +10,22 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var lblMainTime: UILabel!
+    @IBOutlet weak var lblAMPM: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        for familyName in UIFont.familyNames()
+        {
+            for fontName in UIFont.fontNamesForFamilyName(familyName)
+            {
+                print("Family \(familyName) Font: \(fontName)")
+            }
+        }
+        
+        
         // Do any additional setup after loading the view, typically from a nib.
     }
 

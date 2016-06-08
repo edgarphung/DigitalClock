@@ -1,13 +1,20 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="digital-7.ttf">
+            <string>Digital-7</string>
+            <string>Digital-7</string>
+        </mutableArray>
+    </customFonts>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="DigitalClock" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +22,45 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="lTf-IR-QRd">
+                                <rect key="frame" x="0.0" y="20" width="600" height="580"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bNV-1s-duO">
+                                <rect key="frame" x="382" y="152.5" width="27.5" height="26.5"/>
+                                <fontDescription key="fontDescription" name="Digital-7" family="Digital-7" pointSize="29"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10:10" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oJs-nm-XbW" userLabel="mainTime">
+                                <rect key="frame" x="228.5" y="120" width="144" height="91"/>
+                                <fontDescription key="fontDescription" name="Digital-7" family="Digital-7" pointSize="100"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="lTf-IR-QRd" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="6mw-aF-3xr"/>
+                            <constraint firstItem="oJs-nm-XbW" firstAttribute="top" secondItem="lTf-IR-QRd" secondAttribute="top" constant="100" id="76J-7u-6xs"/>
+                            <constraint firstItem="lTf-IR-QRd" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="JWw-OQ-ihn"/>
+                            <constraint firstItem="lTf-IR-QRd" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailing" id="Xz8-Mo-1d7"/>
+                            <constraint firstItem="oJs-nm-XbW" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="iSF-zR-Vlw"/>
+                            <constraint firstItem="bNV-1s-duO" firstAttribute="leading" secondItem="oJs-nm-XbW" secondAttribute="trailing" constant="10" id="jtv-aY-0Im"/>
+                            <constraint firstItem="bNV-1s-duO" firstAttribute="centerY" secondItem="oJs-nm-XbW" secondAttribute="centerY" id="nmv-jj-Xed"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="lTf-IR-QRd" secondAttribute="bottom" id="vOf-dG-Unt"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="lblAMPM" destination="bNV-1s-duO" id="3ZS-WE-9oP"/>
+                        <outlet property="lblMainTime" destination="oJs-nm-XbW" id="Ie3-el-rjQ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
         </scene>
     </scenes>
+    <resources>
+        <image name="background.jpg" width="750" height="1334"/>
+    </resources>
 </document>
